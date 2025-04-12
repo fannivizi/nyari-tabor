@@ -1,1 +1,36 @@
-<p>home works!</p>
+<main>
+    <mat-card id="about">
+        <h1>Üdvözlünk a Szegedi Nyári Tábor oldalán!</h1>
+        <p>Készülj fel a nyár legizgalmasabb élményeire! Táborozz velünk Szeged szívében, ahol a természet, játék és új barátok várnak rád.</p>
+        <a href="#signup" mat-flat-button>Csatlakozom!</a>
+    </mat-card>
+  
+    <section id="activities">
+        <h2>Tábori Programjaink</h2>
+        <div class="activity-grid">
+            <div class="activity">
+                <h3>Városnézés</h3>
+                <p>Fedezd fel Szeged szépségeit!</p>
+            </div>
+            <div class="activity">
+                <h3>Vizes Napok</h3>
+                <p>Medencés móka, vízicsaták és strandos kalandok a forró napokra.</p>
+            </div>
+            <div class="activity">
+                <h3>Kreatív Műhelyek</h3>
+                <p>Rajz, festés, kézműves foglalkozások a szabadban.</p>
+            </div>
+            <div class="activity">
+                <h3>És még sok más...</h3>
+                <p>Részletekért keresd a Programok fület</p>
+            </div>
+        </div>
+    </section>
+  
+    <mat-card id="signup">
+      <h2>Ne maradj le!</h2>
+      <p>Töltsd ki a jelentkezési lapot, és biztosítsd helyed a táborban.</p>
+      <button mat-flat-button (click)="menuSwitch('signup')">Jelentkezés</button>
+    </mat-card>
+  </main>
+  

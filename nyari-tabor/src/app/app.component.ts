@@ -10,13 +10,13 @@ import {SignupComponent} from './pages/signup/signup.component';
   imports: [RouterOutlet, HeaderComponent, HomeComponent, ActivitiesComponent, SignupComponent],
   templateUrl: './app.component.html',
   standalone: true,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'nyari-tabor';
   page = "home";
 
-  changepage(page: string) {
+  changePage(page: string) {
     console.log("Changing page to:", page);
     this.page = page;
   }

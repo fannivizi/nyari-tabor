@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  title = "header"
 
+  @Output() switchPage: EventEmitter<string> = new EventEmitter();
+
+  constructor(){
+    console.log("construtor called");
+  }
+
+  menuSwitch(pageValue: string) {
+    this.switchPage.emit(pageValue);
+  }
 }

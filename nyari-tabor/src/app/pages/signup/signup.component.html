@@ -1,1 +1,53 @@
-<p>signup works!</p>
+<main>
+    <mat-card class="container">
+      <mat-card-title>
+        <h3>Tábori jelentkezés</h3>
+      </mat-card-title>
+      <mat-card-header>
+        <p>Kérjük, töltsd ki az alábbi űrlapot a jelentkezéshez.</p>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="signUpForm" class="signup-form">
+          <div formGroupName="parent">
+            <mat-form-field>
+              <mat-label>Név</mat-label>
+              <input matInput formControlName="name" id="name"/>
+              <mat-hint>Szülő neve</mat-hint>
+            </mat-form-field>
+          
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" id="email"/>
+              <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Telefonszám</mat-label>
+              <input matInput formControlName="phone" type="tel" id="phone"/>
+              <mat-icon matSuffix>call</mat-icon>
+            </mat-form-field>
+          </div>
+          <div formGroupName="child">
+            <mat-form-field>
+              <mat-label>Gyermek neve</mat-label>
+              <input matInput formControlName="name"/>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Gyermek életkora</mat-label>
+              <input matInput formControlName="age" type="number" id="age" min="5" max="14"/>
+              <mat-hint>5-16 éves gyermekek jelentkezését várjuk</mat-hint>
+            </mat-form-field>
+          </div>
+  
+          <mat-form-field>
+            <mat-label>Megjegyzés</mat-label>
+            <input matInput formControlName="message" id="message"/>
+            <mat-hint>pl. ételallergia, betegségek</mat-hint>
+          </mat-form-field>
+  
+          <button mat-raised-button type="submit">Jelentkezem</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </main>
+  

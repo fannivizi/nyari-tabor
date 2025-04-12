@@ -1,1 +1,16 @@
-<p>activities works!</p>
+<main>
+    <section class="activities" id="programok">
+      <h1>Tábori Programjaink</h1>
+      <p class="intro-text">A szegedi nyári tábor változatos programokat kínál, ahol minden gyermek megtalálja a kedvenc elfoglaltságát!</p>
+      <div class="activity-grid">
+      
+      @for (activity of activities; track trackById($index, activity)) {
+        <mat-card class="activity">
+          <h3>{{activity.title}}</h3>
+          <p>{{activity.text}}</p>
+        </mat-card>
+      }
+      </div>
+    </section>
+  </main>
+  
