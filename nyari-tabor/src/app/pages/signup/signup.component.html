@@ -25,6 +25,7 @@
               <mat-label>Telefonszám</mat-label>
               <input matInput formControlName="phone" type="tel" id="phone"/>
               <mat-icon matSuffix>call</mat-icon>
+              <mat-hint>Formátum: +36701231234</mat-hint>
             </mat-form-field>
           </div>
           <div formGroupName="child">
@@ -44,8 +45,9 @@
             <input matInput formControlName="message" id="message"/>
             <mat-hint>pl. ételallergia, betegségek</mat-hint>
           </mat-form-field>
-  
-          <button mat-raised-button type="submit">Jelentkezem</button>
+          
+          <p id="error">{{error}}</p>
+          <button mat-raised-button type="submit" (click)="signup()">Jelentkezem</button>
         </form>
       </mat-card-content>
     </mat-card>

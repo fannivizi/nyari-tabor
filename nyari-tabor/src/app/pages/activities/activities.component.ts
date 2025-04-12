@@ -1,11 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { Activity } from '../../shared/models/activity';
 import { MatCardModule } from '@angular/material/card';
-
-export interface Activity {
-  id: number;
-  title: string;
-  text: string;
-}
 
 @Component({
   selector: 'app-activities',
