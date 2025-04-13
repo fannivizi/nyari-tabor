@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { Activity } from '../../shared/models/activity';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-activities',
-  imports: [MatCardModule, CommonModule],
+  imports: [MatCardModule, CommonModule, CardComponent],
   templateUrl: './activities.component.html',
   styleUrl: './activities.component.scss'
 })
 export class ActivitiesComponent {
   title = "activities";
-  hover: number = -1;
-
+  
   activities: Activity[] = [
     {
       id: 0,

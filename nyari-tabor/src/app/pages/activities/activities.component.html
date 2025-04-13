@@ -4,14 +4,7 @@
       <p class="intro-text">A szegedi nyári tábor változatos programokat kínál, ahol minden gyermek megtalálja a kedvenc elfoglaltságát!</p>
       <div class="activity-grid">
       @for (activity of activities; track trackById($index, activity)) {
-        <mat-card class="activity" [ngClass]="{ 'hover': hover === activity.id }"
-        (mouseenter)="hover = activity.id"
-        (mouseleave)="hover = -1">
-          <h3>{{activity.title}}</h3>
-          @if(hover === activity.id) {
-            <p>{{activity.text}}</p>
-          }
-        </mat-card>
+        <app-card [activity]="activity"></app-card>
       }
       </div>
     </section>

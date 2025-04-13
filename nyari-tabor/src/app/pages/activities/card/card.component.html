@@ -1,0 +1,8 @@
+<mat-card class="activity" [ngClass]="{ 'hover': hover === activity.id }"
+    (mouseenter)="hover = activity.id"
+    (mouseleave)="hover = -1">
+    <h3>{{activity.title}}</h3>
+    @if(hover === activity.id) {
+        <p>{{activity.text}}</p>
+    }
+</mat-card>
