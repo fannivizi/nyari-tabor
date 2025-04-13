@@ -6,16 +6,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SignUp } from '../../shared/models/sign-up'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIcon, ReactiveFormsModule],
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIcon, ReactiveFormsModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
   title = "signup"
-  error = ""
+  message = ""
+  error = false
 
   signUpForm = new FormGroup({
     parent: new FormGroup({
@@ -32,7 +34,8 @@ export class SignupComponent {
 
   signup(): void {
     if(!this.signUpForm.valid) {
-      this.error = "Hibás adatok, kérjük ellenőrizze az űrlapot!"
+      this.message = "Hibás adatok, kérjük ellenőrizze az űrlapot!"
+      this.error = true;
       return
     }
 
@@ -49,6 +52,7 @@ export class SignupComponent {
     message: this.signUpForm.value.message || ''
     };
 
+    this.message = "Sikeres regisztráció!"
     console.log('New user:', newSignup);
     console.log('Form value:', this.signUpForm.value);
   }
