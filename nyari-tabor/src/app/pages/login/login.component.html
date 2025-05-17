@@ -1,0 +1,27 @@
+<main>
+  <mat-card class="container">
+    <mat-card-title>
+      <h3>Bejelentkezés</h3>
+    </mat-card-title>
+    <mat-card-content>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+          <mat-form-field>
+            <mat-label>Email cím</mat-label>
+            <input matInput formControlName="email"/>
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Jelszó</mat-label>
+            <input type="password" matInput formControlName="password"/>
+            <mat-hint>Legalább 6 karakter</mat-hint>
+          </mat-form-field>
+
+        <p id="error" [ngStyle]="{ 'color': error ? 'red' : 'green'}">{{message}}</p>
+        <button mat-flat-button type="submit">Bejelentkezés</button>
+      </form>
+    </mat-card-content>
+    <a routerLink="/reg">Még nincs fiókod? Regisztrálj itt!</a>
+  </mat-card>
+</main>
+

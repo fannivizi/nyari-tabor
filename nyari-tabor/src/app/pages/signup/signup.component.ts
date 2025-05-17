@@ -52,6 +52,12 @@ export class SignupComponent {
     message: this.signUpForm.value.message || ''
     };
 
+    if(newSignup.parent.name == '' || newSignup.parent.email == '' || newSignup.parent.phone == '' || newSignup.child.name == '') {
+      this.message = "Kérjük töltsön ki minden mezőt"
+      this.error = true;
+      return;
+    }
+
     this.message = "Sikeres regisztráció!"
     console.log('New user:', newSignup);
     console.log('Form value:', this.signUpForm.value);

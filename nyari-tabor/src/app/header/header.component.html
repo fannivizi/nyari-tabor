@@ -1,10 +1,15 @@
 <header>
     <div class="title">🌞 NyáriTábor</div>
     <nav>
-      <button (click)="menuSwitch('home')">Rólunk</button>
-      <button (click)="menuSwitch('activities')">Programok</button>
+      <a routerLink='/home'>Rólunk</a>
+      <a routerLink='/activities'>Programok</a>
+      @if(this.auth.loggedIn() == "true") {
+        <a routerLink='/profile'>Profilom</a>
+      }
     </nav>
-    <button mat-flat-button (click)="menuSwitch('signup')" class="signup">Jelentkezés</button>
-  </header>
-  
-  
+    @if(this.auth.loggedIn() == "false") {
+      <a mat-flat-button routerLink='/login' class="signup">Bejelentkezés</a>
+    } @else {
+      <a mat-flat-button (click)="auth.logout()" class="signup">Kijelentkezés</a>
+    }
+</header>

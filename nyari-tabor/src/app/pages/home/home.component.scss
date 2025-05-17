@@ -68,32 +68,3 @@ main {
   h3 {
     color: #e67600;
   }
-
-  #comment {
-    margin: auto;
-    width: 70%;
-    padding: 40px;
-  }
-
-  #comment form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #comment button {
-    width: 50%;
-  }
-
-  #comment h3 {
-    text-align: center;
-    margin: 0 auto 30px;
-  }
-
-  mat-form-field {
-    margin-bottom: 10px;
-  }
-
-  #error {
-    color: red;
-    margin: 0 0 5px;
-  }

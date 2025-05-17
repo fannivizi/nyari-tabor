@@ -1,21 +1,15 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   title = "header"
 
-  @Output() switchPage: EventEmitter<string> = new EventEmitter();
-
-  constructor(){
-    console.log("construtor called");
-  }
-
-  menuSwitch(pageValue: string) {
-    this.switchPage.emit(pageValue);
-  }
+  constructor(public auth: AuthService) {}
 }

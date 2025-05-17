@@ -10,26 +10,27 @@ header {
     top: 0;
     z-index: 1000;
   }
-  
+
   .title {
     font-size: 1.8rem;
     font-weight: bold;
   }
-  
-  nav button {
+
+  nav a {
+    text-decoration: none;
     background-color: transparent;
     border: none;
     margin: 0 15px;
     color: #fff;
     transition: opacity 0.3s ease;
   }
-  
-  nav button:hover {
+
+  nav a:hover {
     opacity: 0.8;
   }
-  
+
   .signup {
-    border: none;
+    text-decoration: none;
     background-color: #ffffff;
     color: #ffb347;
     padding: 10px 20px;
@@ -37,9 +38,8 @@ header {
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
+
   .signup:hover {
     background-color: #ffe59d;
     color: #dc5836;
   }
-  

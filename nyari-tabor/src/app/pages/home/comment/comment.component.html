@@ -1,0 +1,20 @@
+<mat-card id="comment">
+  <h3>Értékelés írása</h3>
+  <form [formGroup]="commentForm">
+    <mat-form-field>
+      <mat-label>Név</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Értékelés</mat-label>
+      <input matInput formControlName="rating">
+      <mat-hint>1 és 5 közötti szám</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Komment</mat-label>
+      <input matInput formControlName="comment">
+    </mat-form-field>
+    <p id="error" [ngStyle]="{ 'color': error ? 'red' : 'green'}">{{message}}</p>
+    <button type=submit mat-raised-button (click)="submitComment()">Értékelés küldése</button>
+  </form>
+</mat-card>

@@ -4,7 +4,7 @@
         <p>Készülj fel a nyár legizgalmasabb élményeire! Táborozz velünk Szeged szívében, ahol a természet, játék és új barátok várnak rád.</p>
         <a href="#signup" mat-flat-button>Csatlakozom!</a>
     </mat-card>
-  
+
     <section id="activities">
         <h2>Tábori Programjaink</h2>
         <div class="activity-grid">
@@ -26,32 +26,12 @@
             </div>
         </div>
     </section>
-  
+
     <mat-card id="signup">
       <h2>Ne maradj le!</h2>
       <p>Töltsd ki a jelentkezési lapot, és biztosítsd helyed a táborban.</p>
       <button mat-flat-button (click)="menuSwitch('signup')">Jelentkezés</button>
     </mat-card>
 
-    <mat-card id="comment">
-        <h3>Értékelés írása</h3>
-        <form [formGroup]="commentForm">
-            <mat-form-field>
-                <mat-label>Név</mat-label>
-                <input matInput formControlName="name">
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Értékelés</mat-label>
-                <input matInput formControlName="rating">
-                <mat-hint>1 és 5 közötti szám</mat-hint>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Komment</mat-label>
-                <input matInput formControlName="comment">
-            </mat-form-field>
-            <p id="error" [ngStyle]="{ 'color': error ? 'red' : 'green'}">{{message}}</p>
-            <button type=submit mat-raised-button (click)="submitComment()">Értékelés küldése</button>
-        </form>
-    </mat-card>
+    <app-comment></app-comment>
   </main>
-  

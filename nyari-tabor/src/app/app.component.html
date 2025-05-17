@@ -1,11 +1,2 @@
-<app-header (switchPage)="changePage($event)"></app-header>
-
-@if (page === "home") {
-  <app-home (switchPage)="changePage($event)"></app-home>
-} @else if (page === "activities") {
-  <app-activities></app-activities>
-} @else if (page === "signup") {
-  <app-signup></app-signup>
-}
-
+<app-header></app-header>
 <router-outlet />
