@@ -1,0 +1,42 @@
+.profile-page {
+  padding: 40px 20px;
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-card {
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+mat-card-header {
+  border-bottom: 1px solid #f0a500;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+mat-card-header p {
+  display: block;  
+  margin: 6px 0;
+  color: #333;
+}
+
+h4 {
+  color: #e67600;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 20px 10px;
+    width: 90%;
+  }
+
+  .profile-card {
+    padding: 15px;
+  }
+  
+}

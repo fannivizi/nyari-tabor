@@ -7,6 +7,8 @@ import { MatIcon } from '@angular/material/icon';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SignUp } from '../../shared/models/sign-up'
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -31,6 +33,8 @@ export class SignupComponent {
     }),
     message: new FormControl('')
   })
+
+  constructor(private router: Router, private auth: AuthService) {}
 
   signup(): void {
     if(!this.signUpForm.valid) {
@@ -59,7 +63,13 @@ export class SignupComponent {
     }
 
     this.message = "Sikeres regisztráció!"
-    console.log('New user:', newSignup);
-    console.log('Form value:', this.signUpForm.value);
+    
+    setTimeout(() => {
+      this.router.navigateByUrl('/home')
+    }, 5000)
+  }
+
+  loggedIn() {
+    return this.auth.loggedIn() == "true";
   }
 }

@@ -48,6 +48,10 @@
           
           <p id="error" [ngStyle]="{ 'color': error ? 'red' : 'green'}">{{message}}</p>
           <button mat-raised-button type="submit" (click)="signup()">Jelentkezem</button>
+          <br>
+          @if(!loggedIn()) {
+            <a href="/reg">Szeretnéd megtekinteni a jelentkezéseid? Regisztrálj itt!</a>
+          }
         </form>
       </mat-card-content>
     </mat-card>

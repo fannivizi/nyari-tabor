@@ -30,8 +30,9 @@
     <mat-card id="signup">
       <h2>Ne maradj le!</h2>
       <p>Töltsd ki a jelentkezési lapot, és biztosítsd helyed a táborban.</p>
-      <button mat-flat-button (click)="menuSwitch('signup')">Jelentkezés</button>
+      <button mat-flat-button (click)="to_signup()">Jelentkezés</button>
     </mat-card>
-
-    <app-comment></app-comment>
+    @if(loggedIn()) {
+        <app-comment></app-comment>
+    }
   </main>

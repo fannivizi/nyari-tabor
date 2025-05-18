@@ -1,37 +1,53 @@
-  .container {
-    margin: 50px auto;
-    width: 70%;
-    padding: 40px;
-  }
+.container {
+  margin: 50px auto;
+  width: 70%;
+  padding: 40px;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  button {
-    width: 50%;
-  }
-
-  h3 {
-    text-align: center;
-    margin: 0 auto 30px;
-    color: #e67600;
-  }
-
-  mat-form-field {
-    margin-bottom: 10px;
-  }
-
-  #error {
-    color: red;
-    margin: 0 0 5px;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+}
 
 button {
-    margin: auto;
+  width: 50%;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+  margin: 0 auto 30px;
+  color: #e67600;
+}
+
+mat-form-field {
+  margin-bottom: 10px;
+}
+
+#error {
+  color: red;
+  margin: 0 0 5px;
 }
 
 a {
-    margin: 20px auto;
+  margin: 20px auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    max-width: 300px;
+  }
 }

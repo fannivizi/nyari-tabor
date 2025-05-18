@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<main class="profile-page">
+  <mat-card class="profile-card">
+    @if(user) {
+        <div>
+          <h4>Felhasználói adatok</h4>
+          <p><strong>Email cím:</strong> {{user.email}}</p>
+            <p><strong>Felhasználónév:</strong> {{user.username}}</p>
+            <p><strong>Teljes név:</strong> {{user.name}}</p>
+        </div>
+        <div>
+          <h4>Feliratkozások</h4>
+            <p>Még nincs feliratkozás</p>
+        </div>
+    } @else {
+      <p>Adatok betöltése folyamatban</p>
+    }
+  </mat-card>
+</main>

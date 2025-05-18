@@ -9,13 +9,18 @@
               <mat-label>Felhasználónév:</mat-label>
               <input matInput formControlName="username"/>
             </mat-form-field>
-          
+
             <mat-form-field>
               <mat-label>Email</mat-label>
               <input matInput formControlName="email"/>
               <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
-    
+
+            <mat-form-field>
+              <mat-label>Teljes név:</mat-label>
+              <input matInput formControlName="name"/>
+            </mat-form-field>
+
             <mat-form-field>
               <mat-label>Jelszó</mat-label>
               <input type="password" matInput formControlName="pw1"/>
@@ -28,11 +33,10 @@
               <input type="password" matInput formControlName="pw2"/>
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
-          
+
           <p id="error" [ngStyle]="{ 'color': error ? 'red' : 'green'}">{{message}}</p>
           <button mat-flat-button type="submit" (click)="reg()">Regisztráció</button>
         </form>
       </mat-card-content>
     </mat-card>
   </main>
-  

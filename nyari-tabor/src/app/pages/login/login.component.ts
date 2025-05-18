@@ -41,7 +41,7 @@ export class LoginComponent {
       this.message = "Sikeres bejelentkezés";
       this.error = false;
     }).catch(error => {
-      error = true;
+      this.error = true;
       this.message = "Hibás email vagy jelszó";
     })
   }

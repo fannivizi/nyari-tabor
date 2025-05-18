@@ -1,45 +1,108 @@
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #fcd34d 0%, #ffb347 100%);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: inline-block;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.signup {
+  background-color: #ffffff;
+  color: #ffb347;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup:hover {
+  background-color: #ffe59d;
+  color: #dc5836;
+}
+
+@media (max-width: 700px) {
+  header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(90deg, #fcd34d 0%, #ffb347 100%);
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
     color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    z-index: 1100;
   }
 
-  .title {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  nav a {
-    text-decoration: none;
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
     background-color: transparent;
-    border: none;
-    margin: 0 15px;
-    color: #fff;
-    transition: opacity 0.3s ease;
+    padding: 0;
+    align-items: center;
   }
 
-  nav a:hover {
-    opacity: 0.8;
+  nav.open {
+    display: flex;
   }
 
-  .signup {
-    text-decoration: none;
-    background-color: #ffffff;
-    color: #ffb347;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  a, .signup {
+    margin: 0;
+    width: 90%;
+    text-align: center;
   }
+}
 
-  .signup:hover {
-    background-color: #ffe59d;
-    color: #dc5836;
-  }

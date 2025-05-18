@@ -1,5 +1,7 @@
 export interface NewUser {
+    id: string
     username: string
     email: string
-    pw: string
+    name: string
+    signups: Array<string>
 }

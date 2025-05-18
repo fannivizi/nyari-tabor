@@ -1,70 +1,101 @@
 main {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-  
-  #about {
-    text-align: center;
-    padding: 60px 20px;
-    border-radius: 20px;
-    margin-bottom: 50px;
-  }
-  
+
+#about {
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+#about h1 {
+  color: #e67600;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#activities {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffb347;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.activity-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.activity {
+  background-color: #ffe5f3;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+#signup {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+#signup p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+button, a {
+  width: 25%;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+h3 {
+  color: #e67600;
+}
+
+@media (max-width: 600px) {
   #about h1 {
-    color: #e67600;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  #about p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  
-  #activities {
-    margin-bottom: 50px;
-    text-align: center;
-  }
-  
-  h2 {
-    color: #ffb347;
     font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .activity-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .activity {
-    background-color: #ffe5f3;
-    padding: 20px;
-    border-radius: 15px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  }
-  
-  #signup {
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 20px;
-    margin-bottom: 50px;
-  }
-  
-  #signup p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-  }
-  
-  button, a {
-    width: 25%;
-    margin: auto;
   }
 
-  h3 {
-    color: #e67600;
+  #about p,
+  #signup p {
+    font-size: 1rem;
   }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .activity {
+    width: 80%;
+  }
+
+  button, a {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+}

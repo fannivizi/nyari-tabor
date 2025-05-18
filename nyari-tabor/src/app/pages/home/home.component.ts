@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CommentComponent } from './comment/comment.component';
+import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +18,15 @@ import { CommentComponent } from './comment/comment.component';
 export class HomeComponent {
   title = "home";
   error = false;
-  message = ""
+  message = "";
 
-  @Output() switchPage: EventEmitter<string> = new EventEmitter();
+  constructor(private auth: AuthService, private router: Router) {}
 
-  menuSwitch(pageValue: string) {
-    this.switchPage.emit(pageValue);
+  loggedIn() {
+    return this.auth.loggedIn() == "true";
+  }
+
+  to_signup() {
+    this.router.navigateByUrl("/signup");
   }
 }

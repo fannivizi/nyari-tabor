@@ -1,15 +1,19 @@
 <header>
+  <div class="header-left">
     <div class="title">🌞 NyáriTábor</div>
-    <nav>
-      <a routerLink='/home'>Rólunk</a>
-      <a routerLink='/activities'>Programok</a>
-      @if(this.auth.loggedIn() == "true") {
-        <a routerLink='/profile'>Profilom</a>
-      }
-    </nav>
-    @if(this.auth.loggedIn() == "false") {
+  </div>
+  <button class="menu-toggle" (click)="menuOpen = !menuOpen"><mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon></button>
+
+  <nav [class.open]="menuOpen">
+    <a routerLink='/home'>Rólunk</a>
+    <a routerLink='/activities'>Programok</a>
+    @if (this.auth.loggedIn() == "true") {
+      <a routerLink='/profile'>Profilom</a>
+    }
+    @if (this.auth.loggedIn() == "false") {
       <a mat-flat-button routerLink='/login' class="signup">Bejelentkezés</a>
     } @else {
       <a mat-flat-button (click)="auth.logout()" class="signup">Kijelentkezés</a>
     }
+  </nav>
 </header>
