@@ -1,6 +1,10 @@
-Nyári tábor
+# Nyári tábor
 
+## teszt user:
 
-teszt user:
-  email: test@gmail.com
-  jelszó: testpw
+- email: test@gmail.com
+- jelszó: testpw
+
+## Hostolt alkalmazás:
+
+https://nyari-tabor-7ec17.web.app
