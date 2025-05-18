@@ -5,9 +5,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CommentComponent } from './comment/comment.component';
+import { Comment } from '../../shared/models/comment';
 import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { CommentComponent } from './comment/comment.component';
 
 @Component({
   selector: 'app-home',
@@ -28,5 +29,9 @@ export class HomeComponent {
 
   to_signup() {
     this.router.navigateByUrl("/signup");
+  }
+
+  handle_comment(comment: Comment) {
+    this.message = `Köszönjük, ${comment.name}! Az üzeneted (${comment.comment}) elküldésre került!`;
   }
 }

@@ -44,6 +44,7 @@ export class SignupComponent {
     }
 
     const newSignup: SignUp = {
+      id: "0",
       parent: {
         name: this.signUpForm.value.parent?.name || '',
         email: this.signUpForm.value.parent?.email || '',

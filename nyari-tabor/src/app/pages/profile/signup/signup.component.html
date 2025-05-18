@@ -1,0 +1,16 @@
+<mat-card class="signup-card">
+  <mat-card-title>Jelentkezés</mat-card-title>
+  <mat-card-content>
+    <h4>Szülő adatai</h4>
+    <p><strong>Név:</strong> {{ signup.parent.name }}</p>
+    <p><strong>Email:</strong> {{ signup.parent.email }}</p>
+    <p><strong>Telefon:</strong> {{ signup.parent.phone }}</p>
+
+    <h4>Gyermek adatai</h4>
+    <p><strong>Név:</strong> {{ signup.child.name }}</p>
+    <p><strong>Kor:</strong> {{ signup.child.age }}</p>
+
+    <h4>Üzenet</h4>
+    <p>{{ signup.message || 'Nincs megadva üzenet.' }}</p>
+  </mat-card-content>
+</mat-card>

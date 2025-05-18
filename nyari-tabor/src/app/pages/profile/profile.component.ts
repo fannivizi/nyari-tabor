@@ -7,11 +7,12 @@ import { NewUser } from '../../shared/models/new-user';
 import { UserService } from '../../shared/services/user.service';
 import { Observable, Subscription } from 'rxjs';
 import { SignUp } from '../../shared/models/sign-up';
+import { SignupComponent } from '../profile/signup/signup.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatIconModule, SignupComponent],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
@@ -28,7 +29,8 @@ export class ProfileComponent implements OnInit, OnDestroy{
       next: (data) => {
         if (data) {
           this.user = data.user;
-          this.signups = data.signups || [];
+          this.signups = data.signups;
+          console.log(this.signups)
         } else {
           this.user = null;
           this.signups = [];
@@ -43,5 +45,9 @@ export class ProfileComponent implements OnInit, OnDestroy{
       this.subsription.unsubscribe();
     }
   }
+
+  trackById(index: number, item: SignUp): SignUp {
+      return item;
+    }
   
 }

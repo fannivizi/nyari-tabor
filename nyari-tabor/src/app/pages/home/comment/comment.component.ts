@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Comment} from '../../../shared/models/comment';
 import {MatButtonModule} from '@angular/material/button';
@@ -14,6 +14,8 @@ import {CommonModule} from '@angular/common';
   styleUrl: './comment.component.scss'
 })
 export class CommentComponent {
+  @Output() commentSubmitted = new EventEmitter<Comment>();
+
   message = "";
   error = false;
   commentForm = new FormGroup({
@@ -38,6 +40,7 @@ export class CommentComponent {
 
     this.message = "Komment elküldve"
     this.error = false;
+    this.commentSubmitted.emit(newComment);
     console.log(newComment);
   }
 }

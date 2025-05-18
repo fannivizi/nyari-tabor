@@ -9,7 +9,13 @@
         </div>
         <div>
           <h4>Feliratkozások</h4>
+          @if(user.signups.length == 0) {
             <p>Még nincs feliratkozás</p>
+          } @else {
+            @for (signup of signups; track trackById($index, signup)) {
+              <app-signup [signup]="signup"></app-signup>
+            }
+          }
         </div>
     } @else {
       <p>Adatok betöltése folyamatban</p>

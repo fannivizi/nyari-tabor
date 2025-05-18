@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NewUser } from '../models/new-user';
 import { from, map, Observable, of, switchMap, tap } from 'rxjs';
-import { doc, Firestore, getDoc } from '@angular/fire/firestore';
+import { collection, doc, Firestore, getDoc, getDocs, query, where } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { SignUp } from '../models/sign-up';
 
@@ -48,10 +48,20 @@ export class UserService {
       };
     }
 
+    const signUpCollection = collection(this.firestore, 'SignUp');
+      const q = query(signUpCollection, where('id', 'in', user.signups));
+      const signUpSnapshot = await getDocs(q);
+      
+      const signups: SignUp[] = [];
+      signUpSnapshot.forEach(doc => {
+        signups.push({ ...doc.data(), id: doc.id } as SignUp);
+      });
+
     return {
         user,
-        signups: []
+        signups: signups
       }; 
+
   } catch (error) {
     console.error('Hiba', error);
     return {user: null, signups:[]}
